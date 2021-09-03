@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import CounterClass from "./CounterClass";
 import CounterFn from "./CounterFn";
 import UserCard from "./UserCard";
+import SmartCounter from "./SmartCounter";
 
 function App() {
     let [ clicks, updateClicks ] = useState(0);
@@ -32,6 +33,15 @@ function App() {
                 </h2>
                 <CounterFn
                     max={9}
+                />
+                <hr/>
+
+                <h2>
+                    Smart counter
+                </h2>
+                <SmartCounter
+                    min={0}
+                    max={13}
                 />
                 <hr/>
             </main>

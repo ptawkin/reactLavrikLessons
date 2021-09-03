@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d757635d-628c-4e9e-96e8-b19a5031396a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lesson1/src/CounterClass.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson1/src/UserCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lesson1/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson1/src/SmartCounter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson1/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/lesson1/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson1/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/lesson1/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson1/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/lesson1/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lesson1/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson1/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson1/src/AppFn.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson1/src/CounterFn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson1/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson1/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +29,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1xAdtRHWZRVwQqUmmD1swbRYjzC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,7 +65,7 @@
       <updated>1629802041289</updated>
       <workItem from="1629802043199" duration="9827000" />
       <workItem from="1630656060878" duration="3571000" />
-      <workItem from="1630664882034" duration="4417000" />
+      <workItem from="1630664882034" duration="11832000" />
     </task>
     <servers />
   </component>
