@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-// import App from './App';
-import AppFn from './AppFn';
+import App from './App';
 
 ReactDom.render(
-    <AppFn />,
+    <App />,
     document.querySelector('.app')
 );

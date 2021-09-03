@@ -1,35 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class App extends React.Component {
-    state = {
-        clicks: 1,
-    }
+import CounterClass from "./CounterClass";
+import CounterFn from "./CounterFn";
+import UserCard from "./UserCard";
 
-    inc = () => {
-        const { clicks } = this.state;
+function App() {
+    let [ clicks, updateClicks ] = useState(0);
 
-        this.setState({ clicks: clicks + 1 })
-    }
+    return (
+        <div>
+            <header>
+                header
+            </header>
+            <main>
+                <h2>
+                    Test class
+                </h2>
+                <CounterClass />
+                <hr/>
 
-    render() {
-        const { clicks } = this.state;
+                <h2>
+                    Test fn, max = 5
+                </h2>
+                <CounterFn
+                    max={5}
+                />
+                <hr/>
 
-        return (
-            <div>
-                <header>
-                    header
-                </header>
-                <main>
-                    <span onClick={() => this.inc}>
-                        { clicks }
-                    </span>
-                </main>
-                <footer>
-                    footer
-                </footer>
-            </div>
-        )
-    }
+                <h2>
+                    Test fn, max = 9
+                </h2>
+                <CounterFn
+                    max={9}
+                />
+                <hr/>
+            </main>
+            <footer>
+                footer
+                <UserCard
+                    name='Jon'
+                    description='pirate'
+                />
+                <UserCard
+                    name='Jack'
+                    description='parrot'
+                />
+            </footer>
+        </div>
+    )
 }
 
 export default App;
