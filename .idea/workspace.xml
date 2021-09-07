@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d757635d-628c-4e9e-96e8-b19a5031396a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/homework1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework1/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework1/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework1/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework1/src/Counter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework1/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework1/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/src/Counter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/src/productsData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/dist/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/dist/main.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/dist/main.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson2/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/src/CounterClass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/src/CounterFn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/src/SmartCounter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/src/UserCard.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,16 +56,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lesson2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lesson2" />
+      <recent name="$PROJECT_DIR$/lesson2/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/lesson1/src" />
     </key>
@@ -76,7 +83,7 @@
       <updated>1629802041289</updated>
       <workItem from="1629802043199" duration="9827000" />
       <workItem from="1630656060878" duration="3571000" />
-      <workItem from="1630664882034" duration="20216000" />
+      <workItem from="1630664882034" duration="39651000" />
     </task>
     <servers />
   </component>

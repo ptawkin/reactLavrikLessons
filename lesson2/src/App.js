@@ -1,61 +1,74 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-import CounterClass from "./CounterClass";
-import CounterFn from "./CounterFn";
-import UserCard from "./UserCard";
-import SmartCounter from "./SmartCounter";
+import Counter from './Counter';
+
+import productsData from './productsData';
+
 
 function App() {
-    let [ clicks, updateClicks ] = useState(0);
+    // debugger
+    const [products, setProducts] = useState(productsData);
+
+    const renderRows = () => {
+        return  products.map((product) => (
+                <tr key={product.id}>
+                    <td>
+                        { product.title }
+                    </td>
+                    <td>
+                        { product.price }
+                    </td>
+                    <td>
+                        <Counter
+                            max={product.rest}
+                            current={product.cnt}
+                            onChange={val => changeCnt(product.id, val)}
+                        />
+                    </td>
+                    <td>
+                        { getTotalPrice(product) }
+                    </td>
+                </tr>
+            )
+        )
+    }
+
+    const changeCnt = (id, cnt) => {
+        setProducts(products.map(product => product.id !== id ? product : {...product, cnt}))
+    }
+
+    const getTotalPrice = (product) => {
+        return product.price * product.rest;
+    }
 
     return (
         <div>
-            <header>
-                header
-            </header>
-            <main>
-                <h2>
-                    Test class
-                </h2>
-                <CounterClass />
-                <hr/>
+            <h1>
+                Cart
+            </h1>
+            <hr/>
+            <table>
+                <thead>
+                <tr>
+                    <td>
+                        Title
+                    </td>
+                    <td>
+                        Price
+                    </td>
+                    <td>
+                        Count
+                    </td>
+                    <td>
+                        Total
+                    </td>
+                </tr>
+                </thead>
 
-                <h2>
-                    Test fn, max = 5
-                </h2>
-                <CounterFn
-                    max={5}
-                />
-                <hr/>
-
-                <h2>
-                    Test fn, max = 9
-                </h2>
-                <CounterFn
-                    max={9}
-                />
-                <hr/>
-
-                <h2>
-                    Smart counter
-                </h2>
-                <SmartCounter
-                    min={0}
-                    max={13}
-                />
-                <hr/>
-            </main>
-            <footer>
-                footer
-                <UserCard
-                    name='Jon'
-                    description='pirate'
-                />
-                <UserCard
-                    name='Jack'
-                    description='parrot'
-                />
-            </footer>
+                <tbody>
+                    { renderRows() }
+                </tbody>
+            </table>
         </div>
     )
 }
