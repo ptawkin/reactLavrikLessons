@@ -50,7 +50,7 @@ function App() {
                 total += product.price * product.cnt;
             }
         )
-        
+
         return total;
     }
 
