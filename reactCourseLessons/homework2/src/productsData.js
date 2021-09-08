@@ -1,4 +1,4 @@
-const productsFromServer = [
+const productsData = [
     {
         "id": 100,
         "title": "Iphone 200",
@@ -29,4 +29,4 @@ const productsFromServer = [
     }
 ];
 
-export default productsFromServer;
+export default productsData;

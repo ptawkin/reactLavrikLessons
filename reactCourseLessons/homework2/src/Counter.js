@@ -17,8 +17,8 @@ function Counter({ min, max, current, onChange }) {
 
     useEffect(() => setInputValue(current), [current]);
 
-    const inc = () => applyCurrent(current + 1);
-    const dec = () => applyCurrent(current - 1);
+    const inc = () => applyCurrent(inputValue === current ? current + 1 : inputValue + 1);
+    const dec = () => applyCurrent(inputValue === current ? current - 1 : inputValue - 1);
 
     const inputChangeHandler = (e) => {
         setInputValue(e.target.value)
@@ -27,11 +27,15 @@ function Counter({ min, max, current, onChange }) {
     const inputBlurHandler = () => {
         const parsedValue = parseInt(inputValue);
 
-        if (isNaN(inputValue)) {
+        if (isNaN(parsedValue)) {
             setInputValue(current);
         } else {
             const nextValue = Math.max(min, Math.min(parsedValue, max));
-            current === nextValue ? setInputValue(nextValue) : null;
+
+            if (inputValue !== nextValue) {
+                setInputValue(nextValue);
+                onChange(nextValue);
+            }
         }
     }
 
@@ -41,6 +45,8 @@ function Counter({ min, max, current, onChange }) {
 
     const applyCurrent = (number) => {
         const newCurrent = Math.max(min, Math.min(number, max));
+
+        setInputValue(newCurrent);
         onChange(newCurrent);
     }
 
@@ -48,7 +54,7 @@ function Counter({ min, max, current, onChange }) {
         <div>
             <button
                 onClick={dec}
-                disabled={current <= min}
+                disabled={inputValue <= min}
             >
                 -
             </button>
@@ -66,7 +72,7 @@ function Counter({ min, max, current, onChange }) {
 
             <button
                 onClick={inc}
-                disabled={current >= max}
+                disabled={inputValue >= max}
             >
                 +
             </button>

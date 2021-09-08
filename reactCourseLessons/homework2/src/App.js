@@ -4,7 +4,6 @@ import Counter from './Counter';
 
 import productsData from './productsData';
 
-
 function App() {
     const [products, setProducts] = useState(productsData);
     const [total, setTotal] = useState(0);
@@ -27,6 +26,12 @@ function App() {
                     </td>
                     <td>
                         { getRowTotalPrice(product) }
+                    </td>
+                    <td
+                        onClick={ () => removeHandler(product.id) }
+                        data-id={ product.id }
+                    >
+                        &nbsp;&nbsp;X
                     </td>
                 </tr>
             )
@@ -52,6 +57,10 @@ function App() {
         )
 
         return total;
+    }
+
+    const removeHandler = (id) => {
+        setProducts(products.filter(product => product.id !== id))
     }
 
     return (
@@ -80,7 +89,7 @@ function App() {
                 </thead>
 
                 <tbody>
-                    { renderRows() }
+                { renderRows() }
                 </tbody>
             </table>
             <hr/>
