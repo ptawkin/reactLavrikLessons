@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import PropTypes from 'prop-types';
-import useWindowSize from '../../hooks/useWindowSize';
 import styles from './counter.module.css';
+import SettingsContext from '../contexts/userSettings';
 
 Counter.propTypes = {
     min: PropTypes.number,
@@ -15,7 +15,6 @@ Counter.defaultProps = {
 }
 
 function Counter({ min, max, current, onChange }) {
-    let { width } = useWindowSize();
     let inp = useRef();
     let updInp = num => inp.current.value = num;
 
@@ -36,16 +35,38 @@ function Counter({ min, max, current, onChange }) {
         }
     }
 
+    let settings = useContext(SettingsContext);
+    console.log(settings);
+
     // change from parent side
     useEffect(() => {
         updInp(current);
     }, [current]);
 
+    //derived state from prop update. mb better in parent with key
+
     return <div>
-        <button type="button" onClick={ dec } disabled={ current <= min }>-</button>
+        <button
+            className='btn btn-danger'
+            type="button"
+            onClick={ dec }
+            disabled={ current <= min }
+            title={ settings.lang === 'ru' ? 'уменьшить' : 'deccrease' }
+        >
+            -
+        </button>
         &nbsp;
-        <input ref={ inp } defaultValue={ current } onBlur={ applyStrValue } className={`counter ${styles.modalBox}`}/>&nbsp;
-        <button type="button" onClick={ inc } disabled={ current >= max }>+</button>
+        <input ref={ inp } defaultValue={ current } onBlur={ applyStrValue }
+               className={ `counter ${ styles.modalBox }` }/>&nbsp;
+        <button
+            className='btn btn-success'
+            type="button"
+            onClick={ inc }
+            disabled={ current >= max }
+            title={ settings.lang === 'ru' ? 'увеличить' : 'increase' }
+        >
+            +
+        </button>
     </div>
 }
 
