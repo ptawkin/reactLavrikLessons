@@ -6,12 +6,24 @@ import styles from './resultScreen.module.css';
 
 function ResultScreen() {
     const orderContext = useContext(OrderContext);
-    console.log(orderContext)
 
     return (
-        <div className={`form ${styles.resultScreen}`}>
-
-        </div>
+        orderContext.page === 'result' && (
+            <div className={ `${ styles.resultScreen }` }>
+                <h1>
+                    Result
+                </h1>
+                <div>
+                    Hello, { orderContext.user.name }
+                </div>
+                <div>
+                    In Cart: { orderContext.cart.productsLength }
+                </div>
+                <div>
+                    Total: { orderContext.cart.total }
+                </div>
+            </div>
+        )
     )
 }
 

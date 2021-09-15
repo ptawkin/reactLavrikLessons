@@ -4,9 +4,11 @@ import Cart from "./components/Cart/Cart";
 
 import OrderContext from './contexts/orderContext';
 import productFromServer from './data/productsData';
+import OrderForm from "./components/OrderForm/OrderForm";
+import ResultScreen from "./components/ResultScreen/ResultScreen";
 
 function App() {
-    const order = {
+    const initialOrder = {
         cart: {
             products: productFromServer,
             productsLength: productFromServer.length,
@@ -17,16 +19,43 @@ function App() {
             email: '',
             phone: '',
         },
+        page: 'cart',
     }
 
-    // const [order, orderData] = useState({ initialOrder });
+    const [orderData, setOrderData] = useState(initialOrder);
 
-    const orderContext = useContext(OrderContext);
-    // console.log(orderContext)
+    const showAnotherPage = (page) => {
+        setOrderData({ ...orderData, page });
+    }
 
+    const updateCartData = (data) => {
+        console.log('data in updateCartData', data)
+
+        setOrderData({...orderData, cart: data });
+        console.log('orderData in updateCartData', orderData)
+    }
+
+    const changeUserData = (userData) => {
+        console.log('userData', userData)
+
+        setOrderData({ ...orderData, user: userData });
+        console.log('orderData in changeUserData', orderData)
+    }
+
+    console.log('orderData in App', orderData)
     return (
-        <OrderContext.Provider value={ order }>
-            <Cart/>
+        <OrderContext.Provider value={ orderData }>
+            <Cart
+                buttonAction={ showAnotherPage }
+                updateAction={ updateCartData }
+            />
+            <OrderForm
+                buttonAction={ showAnotherPage }
+                changeUserData={ changeUserData }
+            />
+            <ResultScreen
+                buttonAction={ showAnotherPage }
+            />
         </OrderContext.Provider>
     )
 }
