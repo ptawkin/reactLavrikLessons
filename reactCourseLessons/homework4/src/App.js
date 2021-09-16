@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import Cart from "./components/Cart/Cart";
 
@@ -24,23 +24,17 @@ function App() {
 
     const [orderData, setOrderData] = useState(initialOrder);
 
-    const showAnotherPage = (page) => {
-        setOrderData({ ...orderData, page });
-    }
+    const showAnotherPage = useCallback((page) => {
+            setOrderData({ ...orderData, page });
+    }, [ orderData ]);
 
-    const updateCartData = (data) => {
-        console.log('data in updateCartData', data)
+    const updateCartData = useCallback((data) => {
+            setOrderData({...orderData, cart: data });
+    }, [ orderData ]);
 
-        setOrderData({...orderData, cart: data });
-        console.log('orderData in updateCartData', orderData)
-    }
-
-    const changeUserData = (userData) => {
-        console.log('userData', userData)
-
-        setOrderData({ ...orderData, user: userData });
-        console.log('orderData in changeUserData', orderData)
-    }
+    const changeUserData = useCallback((userData) => {
+            setOrderData({ ...orderData, user: userData });
+    }, [ orderData ]);
 
     console.log('orderData in App', orderData)
     return (
