@@ -1,11 +1,14 @@
 import React from 'react';
+import {observer} from 'mobx-react-lite';
 
+import orderStore from './store/order';
 
-function Order({ fields, onChange, onConfirm, onCancel }) {
-    let inputs = fields.map(field => {
+function Order({ onConfirm, onCancel }) {
+    console.log(Object.entries(orderStore.formData))
+    let inputs = Object.entries(orderStore.formData).map(([name, field]) => {
         return <div
             className='form-group'
-            key={ field.name }
+            key={ name }
         >
             <label>
                 { field.label }
@@ -14,13 +17,10 @@ function Order({ fields, onChange, onConfirm, onCancel }) {
                    className='form-control'
                    value={ field.value }
                    name={ field.name }
-                // onChange={ changed }
-                   onChange={ (e) => onChange(field.name, e.target.value.trim()) }
+                   onChange={ (e) => orderStore.change(name, e.target.value.trim()) }
             />
         </div>
     });
-
-    let formReady = fields.every(field => field.value !== '');
 
 
     return <>
@@ -46,11 +46,11 @@ function Order({ fields, onChange, onConfirm, onCancel }) {
             type='button'
             className='btn btn-success'
             onClick={ onConfirm }
-            disabled={!formReady}
+            disabled={!orderStore.isValid}
         >
             Next
         </button>
     </>
 }
 
-export default Order;
+export default observer(Order);

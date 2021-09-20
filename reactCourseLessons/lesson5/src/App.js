@@ -54,34 +54,6 @@ function App() {
         setProducts(products.filter(pr => pr.id !== id));
     }
 
-    // order
-    let [formData, setFormData] = useState([
-        {
-            label: 'name',
-            type: 'name',
-            value: '',
-            name: '',
-        },
-        {
-            label: 'email',
-            type: 'email',
-            value: '',
-            name: 'email',
-        },
-        {
-            label: 'tel',
-            type: 'tel',
-            value: '',
-            name: 'tel',
-        },
-    ]);
-
-    let userName = formData.find(f => f.name !== 'name')?.value;
-
-    let setFieldValue = (name, value) => {
-        setFormData(formData.map(field => field.name !== name ? field : { ...field, value }))
-    }
-
 
     return <div>
         { route === 'cart' &&
@@ -94,16 +66,13 @@ function App() {
         }
         { route === 'order' &&
         <Order
-            fields={ formData }
             onCancel={ moveToCart }
             onConfirm={ moveToResult }
-            onChange={ setFieldValue }
         />
         }
         { route === 'result' &&
         <Result
             products={ products }
-            userName={ userName }
         />
         }
     </div>
